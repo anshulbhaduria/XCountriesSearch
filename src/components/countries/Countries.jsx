@@ -37,7 +37,7 @@ function Countries() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className={styles.cardContainer}>
+      <div className={styles.countryCard}>
         {filteredCountries.map(({ common, png }) => {
           return <Cards key={common} name={common} flag={png} />;
         })}
