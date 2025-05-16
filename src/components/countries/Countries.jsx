@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Countries.module.css";
-import axios from "axios";
 import Cards from "../cards/Cards";
+import axios from "axios";
 
 function Countries() {
   const ENDPOINT =
@@ -38,9 +38,13 @@ function Countries() {
         />
       </div>
       <div className={styles.countryCard}>
-        {filteredCountries.map(({ common, png }) => {
-          return <Cards key={common} name={common} flag={png} />;
-        })}
+        {filteredCountries.length > 0 ? (
+          filteredCountries.map(({ common, png }) => (
+            <Cards key={common} name={common} flag={png} />
+          ))
+        ) : (
+          <p>No countries found</p>
+        )}
       </div>
     </div>
   );
