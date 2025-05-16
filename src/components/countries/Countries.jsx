@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Countries.module.css";
 import Cards from "../cards/Cards";
 import axios from "axios";
 
@@ -29,7 +28,7 @@ function Countries() {
 
   return (
     <div>
-      <div className={styles.searchBar}>
+      <div className="searchBar">
         <input
           type="text"
           placeholder="Search for countries..."
@@ -37,7 +36,7 @@ function Countries() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className={styles.countryCard}>
+      <div className="countryCardContainer">
         {filteredCountries.length > 0 ? (
           filteredCountries.map(({ common, png }) => (
             <Cards key={common} name={common} flag={png} />
